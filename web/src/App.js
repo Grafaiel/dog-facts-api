@@ -1,11 +1,12 @@
 import { React} from 'react';
 import Home from './components/Home';
 
-import './styles.css'
-
 function App() {
   return (
-    <div >
+    <div className='app' >
+      <header className='app-header'>
+        <h1 className='home-h1'> Fatos Curiosos Sobre Chachorros </h1>
+      </header>
         <Home />
     </div>
   );

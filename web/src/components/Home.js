@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 
 import DogFactCard from './Card';
+import './components.css';
 
 const Home = () => {
   const [fact, setFact] = useState([]);
@@ -14,7 +15,7 @@ const Home = () => {
     setLoading(false);
     return data;
   };
-  
+
   useEffect(() => {
     getARandom().then((response) => {
       return (response.data);
@@ -30,17 +31,18 @@ const Home = () => {
   }, [reflesh]);
 
   return (
-    <div>
-      <header>
-        <h1> Fatos Curiosos Sobre Chachorros </h1>
-      </header>
+    <div className='home' >
+      <div className='home-text'>
+        {!loading ? <DogFactCard fact={fact} /> : '... Carregando'}
+      </div>
       <button
-          onClick={() => setReflesh(true)}
-          disabled={loading}
-        >
-          Refresh
-        </button>
-      <DogFactCard fact={fact} />
+        onClick={() => setReflesh(true)}
+        disabled={loading}
+        className='home-button'
+
+      >
+        Refresh
+      </button>
     </div>
   );
 }
