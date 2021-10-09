@@ -33,6 +33,7 @@
 }
 
 .home-button {
+  max-height: 40px;
   padding: 8px 10px;
   font-size: 1rem;
   margin: 0 0 25px 0;
@@ -50,7 +51,7 @@
   text-align: center;
   font-size: 1.5rem;
   margin-right: 1rem;
-  background-color: rgba(194, 194, 194, 0.404);
+  background-color: rgba(65, 65, 65, 0.404);
 }
 
 .fact-text {
