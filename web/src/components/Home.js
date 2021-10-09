@@ -1,0 +1,48 @@
+import React, { useState, useEffect } from 'react';
+import axios from 'axios';
+
+import DogFactCard from './Card';
+
+const Home = () => {
+  const [fact, setFact] = useState([]);
+  const [loading, setLoading] = useState(false);
+  const [reflesh, setReflesh] = useState(false);
+
+  const getARandom = async () => {
+    setLoading(true);
+    const data = await axios.get('http://localhost:5000/dogFacts');
+    setLoading(false);
+    return data;
+  };
+  
+  useEffect(() => {
+    getARandom().then((response) => {
+      return (response.data);
+    }).then((response) => {
+      const id = Math.floor(Math.random() * response.length);
+      const fact = response[id];
+      const result = ({ id, fact });
+      return result;
+    }).then((response) => {
+      setReflesh(false);
+      setFact(response.fact)
+    });
+  }, [reflesh]);
+
+  return (
+    <div>
+      <header>
+        <h1> Fatos Curiosos Sobre Chachorros </h1>
+      </header>
+      <button
+          onClick={() => setReflesh(true)}
+          disabled={loading}
+        >
+          Refresh
+        </button>
+      <DogFactCard fact={fact} />
+    </div>
+  );
+}
+
+export default Home;
