@@ -3,11 +3,11 @@
 <hr>
 
 ## Atividade desonvolvida para fins de aprendizado durante a pós web-dev UniAlfa.
-    - api usada foi a <a href="https://dukengn.github.io/Dog-facts-API/">Dog-facts-API</a>, a qual foi feita uma tradução para pt-br no google translate.
+  - api usada foi a [Dog-facts-API](https://dukengn.github.io/Dog-facts-API/), 
+    na qual foi feita uma tradução para pt-br com o google translate.
 
 <hr>
 
 ### Instalação 
-      - yarn install
-      - yarn start
-  
+  - yarn install
+  - yarn start
